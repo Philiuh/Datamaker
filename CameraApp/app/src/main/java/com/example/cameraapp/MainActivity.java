@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(cameraIntent,IMAGE_REQUEST);
             }
         }
-
-
     }
 
     public void displayImage(View view) {
