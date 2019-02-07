@@ -1,20 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DisplayImage"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     >
+
+    <TextView
+
+        android:id="@+id/markView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal|top"
+        android:layout_marginTop="10dp"
+
+        android:layout_marginRight="60dp"
+
+        android:text="Mark" />
+
+    <TextView
+
+        android:id="@+id/modelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal|top"
+        android:layout_marginTop="10dp"
+
+        android:text="Model"
+
+        />
+
+    <TextView
+
+        android:id="@+id/positionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal|top"
+        android:layout_marginLeft="60dp"
+
+        android:layout_marginTop="10dp"
+
+        android:text="Position" />
 
     <com.example.cameraapp.AnnotationImageView
         android:id="@+id/mimageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
+        android:layout_height="700dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="0dp"
+        android:background="#000000"
         android:clickable="true"
-        android:scaleType="fitCenter" />
-</LinearLayout>
+        android:scaleType="fitStart" />
+
+</FrameLayout>
