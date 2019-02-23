@@ -2,22 +2,18 @@ package com.example.cameraapp;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.github.chrisbanes.photoview.PhotoView;
 
 public class DisplayImage extends AppCompatActivity {
 
-    ImageView imageView;
+    PhotoView imageView;
     Bitmap workingbitmap, mutablebitmap;
     TextView tvMark, tvModel, tvPosition;
 
