@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.github.chrisbanes.photoview.PhotoView;
 
 public class DisplayImage extends AppCompatActivity {
 
-    PhotoView imageView;
+    ImageView imageView;
     Bitmap workingbitmap, mutablebitmap;
     TextView tvMark, tvModel, tvPosition;
 
@@ -97,6 +97,7 @@ public class DisplayImage extends AppCompatActivity {
         }
     }
 
+
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
@@ -155,5 +156,18 @@ public class DisplayImage extends AppCompatActivity {
                 break;
         }
         return super.onContextItemSelected(item);
+    }
+
+
+    public boolean onTouchEvent(MotionEvent event) {
+
+        int action = event.getAction();
+        switch (action) {
+
+            case MotionEvent.ACTION_DOWN:
+                imageView.getLayoutParams().width = 500;
+                imageView.getLayoutParams().height = 500;
+        }
+        return super.onTouchEvent(event);
     }
 }

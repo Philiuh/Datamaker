@@ -8,7 +8,9 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -21,16 +23,18 @@ public class AnnotationImageView extends android.support.v7.widget.AppCompatImag
     ArrayList<Float> x_dots = new ArrayList<>();
     ArrayList<Float> y_dots = new ArrayList<>();
     Path path;
+//    ImageView Img;
 
     public AnnotationImageView(Context context) {
         super(context);
         paint.setColor(Color.rgb(255,255,255));
-
+//        Img = findViewById(R.id.mimageView);
     }
 
     public AnnotationImageView(Context context, AttributeSet attrs) {
         super(context, attrs, 0);
     }
+
 
     @Override
     public void onDrawForeground(Canvas canvas) {
@@ -65,17 +69,19 @@ public class AnnotationImageView extends android.support.v7.widget.AppCompatImag
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-
         int action = event.getAction();
         switch (action) {
-            case MotionEvent.ACTION_DOWN:
 
+            case MotionEvent.ACTION_DOWN:
                 downx = event.getX();
                 downy = event.getY();
                 x_dots.add(downx);
                 y_dots.add(downy);
+                getLayoutParams().width = 100;
+                getLayoutParams().height = 100;
+//                Img.getLayoutParams().width = 100;
+//                Img.getLayoutParams().height = 100;
                 invalidate();
-
         }
 
         return super.onTouchEvent(event);
