@@ -23,12 +23,10 @@ public class AnnotationImageView extends android.support.v7.widget.AppCompatImag
     ArrayList<Float> x_dots = new ArrayList<>();
     ArrayList<Float> y_dots = new ArrayList<>();
     Path path;
-//    ImageView Img;
 
     public AnnotationImageView(Context context) {
         super(context);
         paint.setColor(Color.rgb(255,255,255));
-//        Img = findViewById(R.id.mimageView);
     }
 
     public AnnotationImageView(Context context, AttributeSet attrs) {
@@ -79,8 +77,8 @@ public class AnnotationImageView extends android.support.v7.widget.AppCompatImag
                 y_dots.add(downy);
                 getLayoutParams().width = 100;
                 getLayoutParams().height = 100;
-//                Img.getLayoutParams().width = 100;
-//                Img.getLayoutParams().height = 100;
+                super.getLayoutParams().width = 100;
+                super.getLayoutParams().height = 100;
                 invalidate();
         }
 
