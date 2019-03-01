@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -23,15 +24,20 @@ public class AnnotationImageView extends android.support.v7.widget.AppCompatImag
     ArrayList<Float> x_dots = new ArrayList<>();
     ArrayList<Float> y_dots = new ArrayList<>();
     Path path;
+    com.example.cameraapp.AnnotationImageView AIV;      //NullPointerException (null object reference)
+
 
     public AnnotationImageView(Context context) {
         super(context);
         paint.setColor(Color.rgb(255,255,255));
+        AIV = findViewById(R.id.mimageView);
     }
 
     public AnnotationImageView(Context context, AttributeSet attrs) {
         super(context, attrs, 0);
     }
+
+    public AnnotationImageView(Context context, AttributeSet attrs, int defStyle) { super(context, attrs, defStyle); }
 
 
     @Override
@@ -41,7 +47,7 @@ public class AnnotationImageView extends android.support.v7.widget.AppCompatImag
         if (x_dots.size()>1) {
             path = new Path();
             paint.setStrokeWidth(10);
-            paint.setStyle(Paint.Style.FILL_AND_STROKE);
+            paint.setStyle(Paint.Style.STROKE);
 
             canvas.drawCircle(x_dots.get(0),y_dots.get(0),5,paint);
             path.moveTo(x_dots.get(0), y_dots.get(0));
@@ -75,10 +81,12 @@ public class AnnotationImageView extends android.support.v7.widget.AppCompatImag
                 downy = event.getY();
                 x_dots.add(downx);
                 y_dots.add(downy);
-                getLayoutParams().width = 100;
-                getLayoutParams().height = 100;
-                super.getLayoutParams().width = 100;
+                
+                AIV.getLayoutParams().width = 100;  //NullPointerException (null object reference)
+                AIV.getLayoutParams().height = 100;
+                super.getLayoutParams().width = 100;    //It doesn't work at all idk why
                 super.getLayoutParams().height = 100;
+
                 invalidate();
         }
 
