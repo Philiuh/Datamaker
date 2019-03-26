@@ -10,47 +10,12 @@
     >
 
     <TextView
-
-        android:id="@+id/markView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal|top"
-        android:layout_marginTop="10dp"
-
-        android:layout_marginRight="60dp"
-
-        android:text="Mark" />
-
-    <TextView
-
-        android:id="@+id/modelView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal|top"
-        android:layout_marginTop="10dp"
-
-        android:text="Model" />
-
-    <TextView
-
-        android:id="@+id/positionView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal|top"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="10dp"
-        android:text="Position" />
-
-    <TextView
         android:id="@+id/actionMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal|top"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="120dp"
-        android:text="Menu" />
-
-    />
+        android:text="Меню" />
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/mimageView"
@@ -61,5 +26,12 @@
         android:background="#000000"
         android:clickable="true"
         android:scaleType="fitStart" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/fml"   >
+    </FrameLayout>
 
 </FrameLayout>

@@ -47,9 +47,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayImage(View view) {
+
+        if (currentImagePath != null) {
+
             Intent intent = new Intent(this, DisplayImage.class);
             intent.putExtra("image_path", currentImagePath);
             startActivity(intent);
+
+        } else {
+
+            Toast toast = Toast.makeText(this, "Сперва сделайте изображение",Toast.LENGTH_LONG);
+            toast.show();
+
+        }
     }
 
     private File getImageFile() throws IOException {
