@@ -7,6 +7,31 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="196dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="18dp"
+            android:text="Задание:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="30dp"
+            android:text="Сейчас ничего не требуется"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
     <Button
 
         android:layout_width="250dp"
@@ -14,9 +39,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="55dp"
         android:onClick="captureImage"
-        android:text="Сделать изображение"
-
-        />
+        android:text="Сделать изображение" />
 
     <Button
 
@@ -24,8 +47,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="55dp"
-
         android:onClick="displayImage"
         android:text="Разметить объект на изображении" />
+
+    <Button
+
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="55dp"
+        android:text="Проверить правильность" />
+
 
 </LinearLayout>
